@@ -12,3 +12,15 @@ const images = [
     alt: 'Group of Horses Running',
   },
 ];
+
+const galleryElement = document.querySelector('.gallery');//ссылка на элемент с классом gallery
+
+//Каждый элемент массива images преобразовать в HTML-разметку 
+const imagesHTML = images.map(image => `
+  <li>
+    <img src="${image.url}" alt="${image.alt}">
+  </li>
+`).join(''); //все элементы объединяются в одну строку
+
+//Теперь эта разметка вставляется внутрь элемента с классом gallery 
+galleryElement.insertAdjacentHTML('beforeend', imagesHTML);
